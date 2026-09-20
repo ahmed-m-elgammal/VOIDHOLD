@@ -1,0 +1,7 @@
+.godot/
+build/
+__pycache__/
+*.pyc
+*.import.bak
+evidence/*.translation
+evidence/*.csv.import

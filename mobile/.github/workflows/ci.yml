@@ -1,0 +1,46 @@
+name: mobile-ci
+on:
+  push:
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    env:
+      GODOT_BIN: ${{ vars.GODOT_BIN || 'godot' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: validate-data
+        if: hashFiles('tools/validate_data.py') != ''
+        run: python tools/validate_data.py
+      - name: parity
+        if: hashFiles('tools/parity.py') != ''
+        run: python tools/parity.py
+      - name: ci-check
+        run: python tools/ci_check.py
+      - name: check-godot-scripts
+        shell: bash
+        run: |
+          BIN="${GODOT_BIN:-godot}"
+          if ! command -v "$BIN" >/dev/null 2>&1; then
+            if command -v godot >/dev/null 2>&1; then
+              BIN="godot"
+            else
+              echo "godot binary not found; set GODOT_BIN or add godot to PATH"
+              exit 1
+            fi
+          fi
+          fail=0
+          while IFS= read -r f; do
+            "$BIN" --headless --path . --check-only --script "$f" || fail=1
+          done < <(find scripts tools -name '*.gd')
+          exit "$fail"
+      - name: upload-grid-and-reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mobile-grid-reports
+          path: |
+            data/grid.json
+            reports/

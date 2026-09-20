@@ -1,0 +1,32 @@
+fixture_id,kind,type_or_system,stone,alloy_cost,energy_need,max_workers,update_delta_ms,input,output,damage,planet_property,per_worker,expected_result,source_ref,classification
+B-001,building,authority,1,9,0.1,1,2000,,,constant=null;update=null,,,"Canonical row; one authority action every 2000 ms.","mobile/data/buildings.json:1;src/onmars/building.js:244-252",parity
+B-002,building,bar,1,3,0.2,4,3000,stim/0.1,,constant=null;update=null,,,"Canonical row; consumes stim while relaxing.","mobile/data/buildings.json:1;src/onmars/building.js:213-228",parity
+B-003,building,cantine,3,0,0,4,3000,biomass/1,,constant=null;update=null,,,"Canonical row; adds 0.1 fullness per eat action.","mobile/data/buildings.json:1;src/onmars/building.js:196-211",parity
+B-004,building,elevator,30,20,0,3,,,,constant=0;update=null,,,"Canonical row; no update timer.","mobile/data/buildings.json:1;src/onmars/building.js:751-760",parity
+B-005,building,factory,8,8,0.5,3,20000,ore/2,alloy/1/20,constant=null;update=0.15,,,"One worker with sufficient ore produces one alloy per completed action before mobile tuning.","mobile/data/buildings.json:1;src/onmars/building.js:896-918",parity
+B-006,building,farm,3,0,0,2,10000,,biomass/1/15,constant=null;update=0.01,,farmarea/20,"One worker gathers up to one biomass per completed action at productivity 1.","mobile/data/buildings.json:1;src/onmars/building.js:850-870",parity
+B-007,building,farmarea,2,0,0,,,,,constant=null;update=null,isFarmable,,"Worker building; no update timer or output storage.","mobile/data/buildings.json:1;src/onmars/building.js:884-893",parity
+B-008,building,kitchen,5,8,0.5,3,15000,biomass/2,stim/1/20,constant=null;update=0.15,,,"One worker with sufficient biomass produces one stim per completed action before mobile tuning.","mobile/data/buildings.json:1;src/onmars/building.js:920-942",parity
+B-009,building,living,5,0,0,3,2500,,,constant=null;update=0.0004,,,"Relax building; maximum three residents/workers.","mobile/data/buildings.json:1;src/onmars/building.js:778-790",parity
+B-010,building,maintenance,5,0,0,2,3000,,,constant=null;update=null,,,"Consumes one stone when maintenance is needed; exact repair delta requires fixture run.","mobile/data/buildings.json:1;src/onmars/building.js:230-256",parity
+B-011,building,mine,5,0,0,2,10000,,stone/0.5/15,constant=null;update=0.01,,mineshaft/20,"One worker gathers up to 0.5 stone per completed action at productivity 1.","mobile/data/buildings.json:1;src/onmars/building.js:807-827",parity
+B-012,building,mineshaft,4,0,0,,,,,constant=null;update=null,isMineable,,"Worker building; provides mine resource points.","mobile/data/buildings.json:1;src/onmars/building.js:873-882",parity
+B-013,building,oremine,20,0,0.4,2,4000,,ore/0.5/15,constant=null;update=0.01,isOreMineable,,"One worker gathers up to 0.5 ore per completed action at productivity 1.","mobile/data/buildings.json:1;src/onmars/building.js:829-848",parity
+B-014,building,oxygen,3,0,0,,,,,constant=0.0003333333333333333;update=null,,,"One functional oxygen building contributes one numerator unit to oxygen saturation.","mobile/data/buildings.json:1;src/onmars/dome.js:91-97",parity
+B-015,building,quarter,15,0,0.1,3,2500,,,constant=null;update=0.002,,,"Relax building for Officers; maximum three residents/workers.","mobile/data/buildings.json:1;src/onmars/building.js:792-804",parity
+B-016,building,solar,3,0,0,,,,,constant=0.0004;update=null,,,"One undamaged solar building contributes 1.5 energy supply.","mobile/data/buildings.json:1;src/onmars/dome.js:236-240",parity
+B-017,building,storage,10,0,0,2,5000,,,constant=0.000125;update=null,,,"Storage capacity is 160 total resource units before mobile tuning.","mobile/data/buildings.json:1;src/onmars/building.js:762-776",parity
+B-018,building,teleport,20,10,0.1,1,3000,,,constant=0.0003333333333333333;update=null,,,"Transfers five units every 60 seconds, neediest-first.","mobile/data/buildings.json:1;src/onmars/planet.js:137-149",parity
+S-019,scenario,starting_pack,,,,,,,,,,,"stone=60;alloy=20;biomass=30;ore=0;stim=10","mobile/data/moons.json:1;tasks/epic-0-preproduction/T0.2-gdd-lock.md:13",parity
+S-020,scenario,oxygen_5_buildings_6_units_1_oxygen,,,,,,,,,,,"1 / (5*0.05 + 6*0.15) = 0.8695652174","src/onmars/dome.js:91-97",parity
+S-021,scenario,oxygen_5_buildings_6_units_2_oxygen,,,,,,,,,,,"2 / 1.15 = 1.7391304348; source does not clamp above 1, so mobile clamp must be explicit","src/onmars/dome.js:91-97",parity_requires_decision
+S-022,scenario,productivity_full_happy_oxygen_healthy,,,,,,,,,,,"(0.5 + 0.25*1 + 0.25*1) * (1-0) * (0.5*1+0.5) = 1.0","src/onmars/building.js:543-551",parity
+S-023,scenario,productivity_empty_oxygen_zero,,,,,,,,,,,"(0.5 + 0 + 0) * (1-0) * (0.5*0+0.5) = 0.25","src/onmars/building.js:543-551",parity
+S-024,scenario,energy_2_healthy_solar_need_1,,,,,,,,,,,"Supply=2*1.5=3.0; demand=1.0; all buildings remain powered","src/onmars/dome.js:236-249",parity
+S-025,scenario,energy_1_damaged_solar_need_1,,,,,,,,,,,"Supply=1.5*(1-0.5)=0.75; random shutdown continues until enabled demand <=0.75; selected building requires seeded RNG","src/onmars/dome.js:250-268",parity_requires_seed
+S-026,scenario,authority_one_action,,,,,,,,,,,"Enemy health 1.0 -> 0.8 after one worker action at 2000 ms; fixed 20 Hz mapping is 40 steps","src/onmars/building.js:640-647;mobile/data/balance.json:1",parity
+S-027,scenario,spawn_gate_pass,,,,,,,,,,,"Average happiness=0.81 AND fullness=0.81 with free residence passes the strict >0.8 gate at the 40000 ms spawn check","src/onmars/dome.js:370-405;mobile/data/balance.json:1",parity
+S-028,scenario,spawn_gate_boundary,,,,,,,,,,,"Average happiness=0.80 or fullness=0.80 fails because the source comparison is strict >0.8","src/onmars/dome.js:370-374",parity
+S-029,scenario,enemy_spawn_cap,,,,,,,,,,,"At 20 s, roll <0.5 spawns; mobile intentional fix allows at most 3 concurrent enemies, while source length>3 allowed 4","src/onmars/planet.js:135-184;mobile/data/balance.json:1",parity_plus_intentional_fix
+S-030,scenario,teleport_exchange,,,,,,,,,,,"At each 60000 ms exchange, move up to 5 neediest units; tie-break and empty-list behavior must be recorded","src/onmars/planet.js:137-149",parity_requires_fixture
+S-031,scenario,legacy_rng,,,,,,,,,,,"Persist full RNG state or deterministic event stream; a seed alone cannot reproduce the current Math.random sequence","src/onmars/dome.js:262;src/onmars/planet.js:181;src/onmars/enemy.js:130",parity_requirement

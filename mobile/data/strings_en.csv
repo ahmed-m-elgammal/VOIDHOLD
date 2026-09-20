@@ -1,0 +1,85 @@
+key,en
+hud_stone,Stone
+hud_alloy,Alloy
+hud_biomass,Biomass
+hud_ore,Ore
+hud_stim,Stim
+hud_energy,Energy
+hud_oxygen,Oxygen
+hud_population,Population
+hud_dome,Dome
+hud_reports,Reports
+hud_build,Build
+hud_menu,Menu
+tab_service,Service
+tab_industry,Industry
+tab_citizens,Habitation
+building_elevator,Elevator
+building_elevator_desc,Down and up from the old cities underground.
+building_storage,Storage
+building_storage_desc,Carrierbots collect resources from production buildings.
+building_living,Habitat
+building_living_desc,Open living places will be filled as long as the average fullness is greater than 80%.
+building_quarter,Luxury Quarters
+building_quarter_desc,For mighty colonists only. Open living places will be filled as long as the average fullness is greater than 80%.
+building_mine,Stone processing
+building_mine_desc,Processes stone debris into stone blocks for construction.
+building_oremine,Ice drilling
+building_oremine_desc,Extracts iron ore by piercing deep into the ice.
+building_farm,Food processing
+building_farm_desc,Processes nutrition into concentrated nutrition for the Mighty.
+building_mineshaft,Stone collector
+building_mineshaft_desc,Supplies raw stone debris to a stone processing building.
+building_farmarea,Greenhouse
+building_farmarea_desc,Supplies nutritional resources to a food processing building.
+building_factory,Metal foundry
+building_factory_desc,Processes iron ore into metal for constrution. Only the mighty know how to operate a foundry.
+building_kitchen,Cooking Area
+building_kitchen_desc,Nutrition is turned into addictively delicious concentrated nutrition for the mighty.
+building_cantine,Cantine
+building_cantine_desc,Delivers food to hungry colonists.
+building_bar,High Culture
+building_bar_desc,The mighty recreationally consume concentrated nutrition in these establishments.
+building_maintenance,Repair service
+building_maintenance_desc,Repairbots remove damage from any building.
+building_authority,Authority
+building_authority_desc,Defend the perimeter with mechs. Only mighty can operate mechs.
+building_solar,Wind turbine
+building_solar_desc,Produces energy used by advanced buildings.
+building_oxygen,Oxygen recycler
+building_oxygen_desc,The oxygen need rises with each new colonists and building.
+building_teleport,Teleport
+building_teleport_desc,Trade resources with other domes (you obviously need one teleport in each dome to trade).
+warning_no_energy,No energy
+warning_output_full,Output full
+warning_starving,Starving
+warning_under_attack,Building under attack!
+warning_no_oxygen,Low oxygen
+warning_not_enough_resources,Not enough resources.
+warning_building_destroyed,Building destroyed
+tutorial_step_1,Land a new dome and place an oxygen recycler.
+tutorial_step_2,Place storage and a habitat for new arrivals.
+tutorial_step_3,Place a greenhouse and food processing with a cantine.
+tutorial_step_4,Place stone processing with collectors and add solar power.
+tutorial_step_5,Refine ore into alloy in the foundry.
+tutorial_step_6,Open luxury quarters with high culture for officers.
+tutorial_step_7,Staff authority mechs and link domes with teleport.
+settings_title,Settings
+settings_language,Language
+settings_sound,Sound
+settings_haptics,Haptics
+settings_about,About
+settings_privacy,Privacy
+settings_support,Support
+settings_restore,Restore purchases
+shop_title,Shop
+shop_locked,Shop locked
+shop_locked_desc,Purchases are not available in this build.
+menu_continue,Continue
+menu_new,New colony
+menu_moons,Select moon
+menu_settings,Settings
+menu_about,About
+action_place,Place
+action_rotate,Rotate
+action_cancel,Cancel

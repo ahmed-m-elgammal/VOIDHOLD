@@ -1,0 +1,85 @@
+{
+  "bytes": 953877,
+  "mb": 0.91,
+  "files": 129,
+  "by_dir": {
+    "(root)": {
+      "bytes": 28247,
+      "mb": 0.03
+    },
+    ".github": {
+      "bytes": 1355,
+      "mb": 0.0
+    },
+    "data": {
+      "bytes": 681582,
+      "mb": 0.65
+    },
+    "docs": {
+      "bytes": 44390,
+      "mb": 0.04
+    },
+    "evidence": {
+      "bytes": 47349,
+      "mb": 0.05
+    },
+    "reports": {
+      "bytes": 1922,
+      "mb": 0.0
+    },
+    "scenes": {
+      "bytes": 1047,
+      "mb": 0.0
+    },
+    "scripts": {
+      "bytes": 101821,
+      "mb": 0.1
+    },
+    "tools": {
+      "bytes": 46164,
+      "mb": 0.04
+    }
+  },
+  "largest": [
+    {
+      "path": "data/grid.json",
+      "bytes": 653536
+    },
+    {
+      "path": "scripts/sim/dome_sim.gd",
+      "bytes": 42635
+    },
+    {
+      "path": "export_presets.cfg",
+      "bytes": 19858
+    },
+    {
+      "path": "scripts/sim/unit_sim.gd",
+      "bytes": 17308
+    },
+    {
+      "path": "scripts/sim/planet_sim.gd",
+      "bytes": 15923
+    },
+    {
+      "path": "tools/ci_check.py",
+      "bytes": 12181
+    },
+    {
+      "path": "tools/run_parity_tests.py",
+      "bytes": 10722
+    },
+    {
+      "path": "scripts/sim/enemy_sim.gd",
+      "bytes": 9399
+    },
+    {
+      "path": "data/buildings.json",
+      "bytes": 9012
+    },
+    {
+      "path": "evidence/t0.8-fixture-values.csv",
+      "bytes": 6451
+    }
+  ]
+}

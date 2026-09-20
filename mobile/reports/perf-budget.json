@@ -1,0 +1,22 @@
+{
+  "thresholds": {
+    "frame_p95_ms": {
+      "low": 33.3,
+      "mid_high": 20.0
+    },
+    "save_ms": 300.0,
+    "fast_forward_s": {
+      "low": 5.0,
+      "mid_high": 2.0
+    }
+  },
+  "measurements": {
+    "grid_load_ms": 16.06,
+    "save_roundtrip_ms": 0.32,
+    "save_status": "pass",
+    "frame_p95_ms": null,
+    "frame_status": "pending-device",
+    "fast_forward_s": null,
+    "fast_forward_status": "pending-device"
+  }
+}
