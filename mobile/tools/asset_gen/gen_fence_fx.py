@@ -17,7 +17,8 @@ Placement feedback (E2-06):
 All RGBA, no text (EN+AR localization rule). Original procedural work.
 Usage: python3 gen_fence_fx.py [--out-base DIR]
 """
-import argparse, os
+import argparse
+from pathlib import Path, os
 import numpy as np
 from PIL import Image, ImageFilter
 
@@ -144,7 +145,7 @@ def gen_placement(out):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out-base", default="/home/z/my-project/VOIDHOLD/mobile/assets")
+    ap.add_argument("--out-base", default=str(Path(__file__).resolve().parents[2] / "assets"))
     args = ap.parse_args()
     fence = os.path.join(args.out_base, "domes", "fence")
     place = os.path.join(args.out_base, "ui", "placement")

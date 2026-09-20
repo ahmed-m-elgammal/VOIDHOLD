@@ -1,3 +1,4 @@
+from pathlib import Path
 #!/usr/bin/env python3
 """Render a preview montage of the VOIDHOLD greybox .glb kit.
 
@@ -9,8 +10,9 @@ import numpy as np
 import trimesh
 from PIL import Image, ImageDraw
 
-MODELS = sorted(glob.glob("/home/z/my-project/VOIDHOLD/mobile/assets/domes/greybox/*.glb")) + \
-         sorted(glob.glob("/home/z/my-project/VOIDHOLD/mobile/assets/world/ground/dressing/*.glb"))
+ASSETS = Path(__file__).resolve().parents[2] / "assets"
+MODELS = sorted(glob.glob(str(ASSETS / "domes" / "greybox" / "*.glb"))) + \
+         sorted(glob.glob(str(ASSETS / "world" / "ground" / "dressing" / "*.glb")))
 
 CELL = 300
 

@@ -26,7 +26,8 @@ lights (one directional light rule).
 
 Usage: python3 gen_greybox_models.py [--out-base DIR] [--seed 42]
 """
-import argparse, math, os, random
+import argparse
+from pathlib import Path, math, os, random
 from gltf_writer import GLBBuilder, VH_MATERIALS, rot_y, rot_x, tr
 
 def box(b, mat, cx, cz, w, h, d, y0=0.0, ang=0.0):
@@ -276,7 +277,7 @@ def build_snow_drift(rng):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out-base", default="/home/z/my-project/VOIDHOLD/mobile/assets")
+    ap.add_argument("--out-base", default=str(Path(__file__).resolve().parents[2] / "assets"))
     ap.add_argument("--seed", type=int, default=42)
     args = ap.parse_args()
     rng = random.Random(args.seed)

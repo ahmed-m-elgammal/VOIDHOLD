@@ -11,7 +11,8 @@ Outputs SVG vector masters + 512px and 48px PNGs.
 
 Usage: python3 gen_icons.py [--out-base DIR]
 """
-import argparse, os
+import argparse
+from pathlib import Path, os
 import cairosvg
 
 SNOW, ALLOY, ALLOY_D, AMBER, CYAN, GREEN, RED, WARM = (
@@ -355,7 +356,7 @@ def adaptive_bg():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out-base", default="/home/z/my-project/VOIDHOLD/mobile/assets")
+    ap.add_argument("--out-base", default=str(Path(__file__).resolve().parents[2] / "assets"))
     args = ap.parse_args()
 
     jobs = []

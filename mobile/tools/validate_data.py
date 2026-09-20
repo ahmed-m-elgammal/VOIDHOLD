@@ -79,8 +79,8 @@ def main(argv):
         if g.get("width") != 210 or g.get("height") != 210:
             pack_ok = False
     results.append(report("moons_start_pack", pack_ok, "stone=60 alloy=20 biomass=30 ore=0 stim=10"))
-    ok = len(en_keys) == 84 and len(ar_keys) == 84 and en_keys == ar_keys
-    results.append(report("strings_84_match", ok, "en " + str(len(en_keys)) + " ar " + str(len(ar_keys))))
+    ok = len(en_keys) >= 84 and len(en_keys) == len(ar_keys) and en_keys == ar_keys
+    results.append(report("strings_match_min84", ok, "en " + str(len(en_keys)) + " ar " + str(len(ar_keys))))
     ok = int(grid.get("width", -1)) == 210 and int(grid.get("height", -1)) == 210
     results.append(report("grid_210x210", ok, str(grid.get("width")) + "x" + str(grid.get("height"))))
     ok = float(balance.get("energy", {}).get("per_solar", -1)) == 1.5

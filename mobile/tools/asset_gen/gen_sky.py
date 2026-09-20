@@ -15,7 +15,9 @@ delivered as a separate sprite so it can be placed at a controlled distance.
 
 Usage: python3 gen_sky.py [--size 2048] [--out DIR]
 """
-import argparse, os
+import argparse
+from pathlib import Path
+import os, sys, json
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
@@ -158,7 +160,7 @@ def build_distant_moon(S=1024, seed=21):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--size", type=int, default=2048)
-    ap.add_argument("--out", default="/home/z/my-project/VOIDHOLD/mobile/assets/world/sky")
+    ap.add_argument("--out", default=str(Path(__file__).resolve().parents[2] / "assets" / "world" / "sky"))
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
     W, H = args.size, args.size // 2

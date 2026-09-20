@@ -3,7 +3,8 @@
 # Per ASSET_REQUIREMENTS.md section 3: AI-generated images are CONCEPT/REFERENCE
 # ONLY — approved designs must be rebuilt as clean editable assets before use.
 set -e
-OUT=/home/z/my-project/VOIDHOLD/mobile/assets/concepts
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+OUT="$SCRIPT_DIR/../../assets/concepts"
 mkdir -p "$OUT"
 
 STYLE="Authored industrial survival colony on a frozen exomoon, realistic-but-readable low-poly PBR game art, designed for orthographic 2.5D mobile colony builder, quiet and mineral mood: powder snow #E8EEF4, blue ice, dark basalt rock #6B7280, oxidized blue-gray alloy #3A4750, restrained warm amber safety markings #FFB020, warm habitation light #FFC37A, sparing cyan/ice-blue technology glow, clean shape language readable at gameplay zoom, neutral concept-sheet presentation"

@@ -311,7 +311,10 @@ func snapshot() -> Dictionary:
 			"tune": dd.tune.duplicate(true),
 			"spawn_acc_ms": dd.spawn_acc_ms,
 			"check_acc_ms": dd.check_acc_ms,
-			"next_guid": dd.next_guid
+			"next_guid": dd.next_guid,
+			"topleft": dd.topleft,
+			"dome_size": dd.dome_size,
+			"entrance_side": dd.entrance_side
 		})
 	var pending_state: Array = []
 	for item in pending:
@@ -429,6 +432,11 @@ func load_state(state: Dictionary) -> bool:
 		ds.spawn_acc_ms = int(dome_state.get("spawn_acc_ms", 0))
 		ds.check_acc_ms = int(dome_state.get("check_acc_ms", 0))
 		ds.next_guid = int(dome_state.get("next_guid", 1))
+		var tl: Variant = dome_state.get("topleft", Vector2i.ZERO)
+		if tl is Vector2i:
+			ds.topleft = tl
+		ds.dome_size = int(dome_state.get("dome_size", 80))
+		ds.entrance_side = int(dome_state.get("entrance_side", 3))
 		ds.rebuild_walkability()
 		ds._dirty = true
 		ds.sync_indices()

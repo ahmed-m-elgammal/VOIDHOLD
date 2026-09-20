@@ -15,7 +15,9 @@ break up tiling across the 210x210 planet surface.
 Usage: python3 gen_ground_textures.py [--size 1024] [--out DIR]
 Original procedural work generated for VOIDHOLD: Moon Colony.
 """
-import argparse, os
+import argparse
+from pathlib import Path
+import os, sys, json
 import numpy as np
 from PIL import Image
 
@@ -137,7 +139,7 @@ GENS = {"snow": gen_snow, "compacted": gen_compacted, "rock": gen_rock, "ice": g
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--size", type=int, default=1024)
-    ap.add_argument("--out", default="/home/z/my-project/VOIDHOLD/mobile/assets/world/ground")
+    ap.add_argument("--out", default=str(Path(__file__).resolve().parents[2] / "assets" / "world" / "ground"))
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
 

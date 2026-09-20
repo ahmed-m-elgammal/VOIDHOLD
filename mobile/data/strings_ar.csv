@@ -83,3 +83,17 @@ menu_about,About
 action_place,Place
 action_rotate,Rotate
 action_cancel,Cancel
+action_demolish,هدم
+toast_placed,تم البناء
+toast_bad_tile,لا يمكن البناء هنا — الموقع محجوب أو الأرض غير مناسبة.
+toast_outside_dome,يجب البناء داخل القبة.
+toast_elevator_outside,يجب وضع المصعد خارج حدود القبة.
+toast_no_space,لا توجد مساحة لهبوط قبة جديدة هنا.
+toast_no_resource,الموارد غير كافية.
+toast_missing_link,لا يوجد مبنى مرتبط في النطاق.
+toast_prerequisite,المبنى المطلوب مفقود.
+toast_new_dome,تم إنشاء قبة جديدة.
+toast_demolished,تم هدم المبنى.
+toast_cannot_demolish,لا يمكن هدم المصعد.
+hud_day,نهار
+hud_night,ليل

@@ -134,7 +134,10 @@ def check_grid(results):
 
 
 def check_provenance(results):
-    roots = [GAME / "art_final", MOBILE / "art"]
+    # Scan every shipped asset tree for quarantined-pack markers. The
+    # legacy roots are kept for historical completeness; mobile/assets is
+    # the live Epic 2+ asset library and must always be covered.
+    roots = [MOBILE / "assets", GAME / "art_final", MOBILE / "art"]
     hits = []
     scanned = 0
     skipped = []
@@ -144,6 +147,10 @@ def check_provenance(results):
             continue
         for path in root.rglob("*"):
             if not path.is_file():
+                continue
+            # Markdown provenance/README docs legitimately reference the
+            # quarantine marker list itself; scan shipped assets, not docs.
+            if path.suffix.lower() in (".md", ".rst", ".txt"):
                 continue
             scanned += 1
             try:

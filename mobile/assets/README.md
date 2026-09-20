@@ -87,6 +87,16 @@ assets/
 - **Ghost/feedback**: unshaded, alpha-blend, render above ground
   (`render_priority` / `no_depth_test` as needed).
 
+## Runtime integration (Epic 2)
+
+Everything above is wired into the live scene: `scenes/world/Planet3D.tscn`
+uses the ground set + mask atlas via `shaders/ground_blend.gdshader`, the sky
+panoramas via `scripts/world/day_night.gd` (drives `solar_mult` into the
+sim), the fence kit via `shaders/fence_ring.gdshader`, the greybox `.glb`
+kit via `scripts/world/building_view.gd`, and the placement feedback pack via
+`scripts/world/placement_system.gd`. See
+[`../docs/epic2-runtime-handoff.md`](../docs/epic2-runtime-handoff.md).
+
 ## Regenerating
 
 All assets are reproducible from `mobile/tools/asset_gen/` (see PROVENANCE):

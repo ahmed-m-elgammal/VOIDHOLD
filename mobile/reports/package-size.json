@@ -1,18 +1,22 @@
 {
-  "bytes": 953875,
-  "mb": 0.91,
-  "files": 129,
+  "bytes": 19365532,
+  "mb": 18.47,
+  "files": 505,
   "by_dir": {
     "(root)": {
-      "bytes": 28247,
+      "bytes": 28334,
       "mb": 0.03
     },
     ".github": {
       "bytes": 1355,
       "mb": 0.0
     },
+    "assets": {
+      "bytes": 18244960,
+      "mb": 17.4
+    },
     "data": {
-      "bytes": 681582,
+      "bytes": 686666,
       "mb": 0.65
     },
     "docs": {
@@ -20,66 +24,70 @@
       "mb": 0.04
     },
     "evidence": {
-      "bytes": 47349,
-      "mb": 0.05
+      "bytes": 17602,
+      "mb": 0.02
     },
     "reports": {
-      "bytes": 1920,
+      "bytes": 2098,
       "mb": 0.0
     },
     "scenes": {
-      "bytes": 1047,
+      "bytes": 4665,
       "mb": 0.0
     },
     "scripts": {
-      "bytes": 101821,
-      "mb": 0.1
+      "bytes": 182296,
+      "mb": 0.17
+    },
+    "shaders": {
+      "bytes": 5870,
+      "mb": 0.01
     },
     "tools": {
-      "bytes": 46164,
-      "mb": 0.04
+      "bytes": 147296,
+      "mb": 0.14
     }
   },
   "largest": [
     {
+      "path": "assets/world/ground/_preview_compacted.png",
+      "bytes": 2525747
+    },
+    {
+      "path": "assets/world/ground/_preview_rock.png",
+      "bytes": 2084731
+    },
+    {
+      "path": "assets/world/ground/_preview_ice.png",
+      "bytes": 2016470
+    },
+    {
+      "path": "assets/world/ground/_preview_snow.png",
+      "bytes": 1873690
+    },
+    {
+      "path": "assets/world/ground/rock_albedo.png",
+      "bytes": 1098689
+    },
+    {
+      "path": "assets/world/ground/compacted_albedo.png",
+      "bytes": 1001383
+    },
+    {
+      "path": "assets/world/ground/ice_albedo.png",
+      "bytes": 974410
+    },
+    {
+      "path": "assets/world/ground/snow_albedo.png",
+      "bytes": 874244
+    },
+    {
+      "path": "assets/world/ground/compacted_normal_gl.png",
+      "bytes": 679384
+    },
+    {
       "path": "data/grid.json",
       "bytes": 653536
-    },
-    {
-      "path": "scripts/sim/dome_sim.gd",
-      "bytes": 42635
-    },
-    {
-      "path": "export_presets.cfg",
-      "bytes": 19858
-    },
-    {
-      "path": "scripts/sim/unit_sim.gd",
-      "bytes": 17308
-    },
-    {
-      "path": "scripts/sim/planet_sim.gd",
-      "bytes": 15923
-    },
-    {
-      "path": "tools/ci_check.py",
-      "bytes": 12181
-    },
-    {
-      "path": "tools/run_parity_tests.py",
-      "bytes": 10722
-    },
-    {
-      "path": "scripts/sim/enemy_sim.gd",
-      "bytes": 9399
-    },
-    {
-      "path": "data/buildings.json",
-      "bytes": 9012
-    },
-    {
-      "path": "evidence/t0.8-fixture-values.csv",
-      "bytes": 6451
     }
   ]
 }

@@ -13,14 +13,16 @@ contract, never hand-painted, so they always match simulation data.
 
 Usage: python3 gen_mask_atlas.py [--grid PATH] [--out DIR]
 """
-import argparse, json, os
+import argparse
+from pathlib import Path
+import os, sys, json
 import numpy as np
 from PIL import Image
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--grid", default="/home/z/my-project/VOIDHOLD/mobile/data/grid.json")
-    ap.add_argument("--out", default="/home/z/my-project/VOIDHOLD/mobile/assets/world/masks")
+    ap.add_argument("--grid", default=str(Path(__file__).resolve().parents[2] / "data" / "grid.json"))
+    ap.add_argument("--out", default=str(Path(__file__).resolve().parents[2] / "assets" / "world" / "masks"))
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
 

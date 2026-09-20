@@ -83,3 +83,17 @@ menu_about,About
 action_place,Place
 action_rotate,Rotate
 action_cancel,Cancel
+action_demolish,Demolish
+toast_placed,placed
+toast_bad_tile,Cannot place here — blocked or wrong ground.
+toast_outside_dome,Buildings must be inside the dome.
+toast_elevator_outside,Elevators must be outside dome boundaries.
+toast_no_space,No room to land a new dome here.
+toast_no_resource,Not enough resources.
+toast_missing_link,No linked building in range.
+toast_prerequisite,Prerequisite building missing.
+toast_new_dome,New dome established.
+toast_demolished,Building demolished.
+toast_cannot_demolish,The elevator cannot be demolished.
+hud_day,Day
+hud_night,Night
