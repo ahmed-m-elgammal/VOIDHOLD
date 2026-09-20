@@ -1,0 +1,11 @@
+# VOIDHOLD repository boundary
+#
+# The workspace still contains the original GameJS project for reference, but
+# the published repository contains only the Godot mobile project and the
+# canonical task specifications.
+/*
+!/.gitignore
+!/mobile/
+!/mobile/**
+!/tasks/
+!/tasks/**
