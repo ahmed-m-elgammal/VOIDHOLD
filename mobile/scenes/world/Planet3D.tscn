@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3]
+[gd_scene load_steps=26 format=3]
 
 [ext_resource type="Script" path="res://scripts/camera_rig.gd" id="1_rig"]
 [ext_resource type="Script" path="res://scripts/sim/sim_runtime.gd" id="2_runtime"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" path="res://assets/world/masks/logical_mask_a.png" id="t_mask_a"]
 [ext_resource type="Texture2D" path="res://assets/world/masks/logical_mask_b.png" id="t_mask_b"]
 [ext_resource type="Texture2D" path="res://assets/world/sky/sky_day_panorama.png" id="t_sky_day"]
+[ext_resource type="Texture2D" path="res://assets/world/sky/sky_night_panorama.png" id="t_sky_night"]
+[ext_resource type="Shader" path="res://shaders/sky_crossfade.gdshader" id="7_skyshader"]
 [ext_resource type="Texture2D" path="res://assets/world/sky/distant_moon.png" id="t_moon"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
@@ -41,11 +43,15 @@ shader_parameter/macro_variation = ExtResource("t_macro")
 shader_parameter/mask_a = ExtResource("t_mask_a")
 shader_parameter/mask_b = ExtResource("t_mask_b")
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaMat_sky"]
-panorama = ExtResource("t_sky_day")
+[sub_resource type="ShaderMaterial" id="ShaderMat_sky"]
+shader = ExtResource("7_skyshader")
+shader_parameter/blend = 1.0
+shader_parameter/night_dim = 0.9
+shader_parameter/day_tex = ExtResource("t_sky_day")
+shader_parameter/night_tex = ExtResource("t_sky_night")
 
 [sub_resource type="Sky" id="Sky_1"]
-sky_material = SubResource("PanoramaMat_sky")
+sky_material = SubResource("ShaderMat_sky")
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 2

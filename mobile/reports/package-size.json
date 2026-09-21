@@ -1,7 +1,7 @@
 {
-  "bytes": 19365532,
-  "mb": 18.47,
-  "files": 505,
+  "bytes": 24672437,
+  "mb": 23.53,
+  "files": 508,
   "by_dir": {
     "(root)": {
       "bytes": 28334,
@@ -12,40 +12,40 @@
       "mb": 0.0
     },
     "assets": {
-      "bytes": 18244960,
-      "mb": 17.4
+      "bytes": 23512170,
+      "mb": 22.42
     },
     "data": {
       "bytes": 686666,
       "mb": 0.65
     },
     "docs": {
-      "bytes": 44390,
-      "mb": 0.04
+      "bytes": 50951,
+      "mb": 0.05
     },
     "evidence": {
       "bytes": 17602,
       "mb": 0.02
     },
     "reports": {
-      "bytes": 2098,
+      "bytes": 2154,
       "mb": 0.0
     },
     "scenes": {
-      "bytes": 4665,
+      "bytes": 5018,
       "mb": 0.0
     },
     "scripts": {
-      "bytes": 182296,
-      "mb": 0.17
+      "bytes": 203088,
+      "mb": 0.19
     },
     "shaders": {
-      "bytes": 5870,
+      "bytes": 6846,
       "mb": 0.01
     },
     "tools": {
-      "bytes": 147296,
-      "mb": 0.14
+      "bytes": 158253,
+      "mb": 0.15
     }
   },
   "largest": [
@@ -66,6 +66,18 @@
       "bytes": 1873690
     },
     {
+      "path": "assets/concepts/E2-07_slice_building_set_concept.png",
+      "bytes": 1490169
+    },
+    {
+      "path": "assets/concepts/E2-04_dome_entrance_concept.png",
+      "bytes": 1377428
+    },
+    {
+      "path": "assets/concepts/E2-09_world_lookdev_keyart.png",
+      "bytes": 1306386
+    },
+    {
       "path": "assets/world/ground/rock_albedo.png",
       "bytes": 1098689
     },
@@ -76,18 +88,6 @@
     {
       "path": "assets/world/ground/ice_albedo.png",
       "bytes": 974410
-    },
-    {
-      "path": "assets/world/ground/snow_albedo.png",
-      "bytes": 874244
-    },
-    {
-      "path": "assets/world/ground/compacted_normal_gl.png",
-      "bytes": 679384
-    },
-    {
-      "path": "data/grid.json",
-      "bytes": 653536
     }
   ]
 }
